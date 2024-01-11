@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:14.9
+    volumes:
+      - pg_pgadmin_postgres_data:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+    ports:
+      - "5432:5432"
+    networks:
+      - pg_pgadmin-network
+      
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL:
+        pg_pgadmin@example.com
+      PGADMIN_DEFAULT_PASSWORD: pg_pgadmin
+    ports:
+      - "5050:80"
+    networks:
+      - pg_pgadmin-network
+
+networks:
+  pg_pgadmin-network:
+    driver: bridge
+
+volumes:
+  pg_pgadmin_postgres_data:
