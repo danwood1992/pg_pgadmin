@@ -1,4 +1,4 @@
-build:
+zbuild:
 	@echo "Building Docker containers..."
 	docker compose build
 
