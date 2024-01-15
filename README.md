@@ -1,7 +1,7 @@
 
-# udado
+# Pg_Pgadmin
 
-Udacity nano degree project
+Postgres and PGadmin contianerised for quick deploment
 
 ## Setup Guide
 
